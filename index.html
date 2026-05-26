@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hridaya OS — Talk to your computer, naturally</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pink:    #e8436a;
+  --pink-lt: #fde8ee;
+  --cyan:    #0cbfaa;
+  --cyan-lt: #e0f9f6;
+  --bg:      #fefefe;
+  --surface: #f8f7ff;
+  --card:    #ffffff;
+  --ink:     #1a1a2e;
+  --soft:    #6b6b8a;
+  --border:  #ece9f5;
+  --mono:    'Space Mono', monospace;
+  --sans:    'Nunito', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+/* NAV */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 3rem;
+  background: rgba(254,254,254,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 50;
+}
+.nav-logo { font-family: var(--sans); font-size: 1.1rem; font-weight: 800; color: var(--pink); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--soft); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+
+/* HERO */
+.hero {
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+  background: linear-gradient(160deg, #fef6f9 0%, #f0fffe 50%, #f5f0ff 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--pink-lt);
+  color: var(--pink);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.hero h1 .highlight { color: var(--pink); }
+
+.hero-tagline {
+  font-size: 1.15rem;
+  color: var(--soft);
+  max-width: 560px;
+  margin: 0 auto 0.75rem;
+  font-weight: 400;
+}
+
+.hero-simple {
+  font-size: 1rem;
+  color: var(--cyan);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+/* INSTALL BOX */
+.install-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; margin-bottom: 2rem; }
+
+.install-box {
+  display: flex; align-items: center;
+  background: var(--ink);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 400px; width: 100%;
+}
+
+.install-box code {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: #a8eddf;
+  padding: 0.85rem 1.2rem;
+}
+
+.copy-btn {
+  background: var(--pink);
+  border: none; color: #fff;
+  font-family: var(--sans); font-weight: 700; font-size: 0.78rem;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer; transition: background 0.2s; white-space: nowrap;
+}
+.copy-btn:hover { background: #c8304f; }
+
+.install-note {
+  font-size: 0.8rem; color: var(--soft);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  max-width: 400px; width: 100%;
+  text-align: center;
+}
+
+.install-note strong { color: var(--ink); }
+
+/* WHAT IS IT — non-tech section */
+.explain {
+  padding: 5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.75rem;
+}
+
+.explain h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.explain-lead {
+  font-size: 1.05rem;
+  color: var(--soft);
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+/* COMPARISON */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.compare-box {
+  border-radius: 16px;
+  padding: 1.75rem;
+  border: 1.5px solid var(--border);
+}
+
+.compare-box.old {
+  background: #fff8f8;
+  border-color: #ffd0d0;
+}
+
+.compare-box.new {
+  background: #f0fff9;
+  border-color: #b0f0e0;
+}
+
+.compare-label {
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+
+.compare-box.old .compare-label { color: #c0385a; }
+.compare-box.new .compare-label { color: #0cbfaa; }
+
+.compare-item {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  margin-bottom: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+.compare-box.old .compare-item { background: #ffe8e8; color: #8a2020; }
+.compare-box.new .compare-item { background: #d4f9ef; color: #085048; }
+
+.compare-item .desc {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--soft);
+  margin-top: 0.2rem;
+  font-weight: 400;
+}
+
+/* WHO IS IT FOR */
+.who {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.who-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.who-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.who-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
+.who-card p { font-size: 0.85rem; color: var(--soft); line-height: 1.55; }
+
+/* TERMINAL */
+.terminal-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem;
+}
+
+.terminal-inner {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.terminal-section h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.terminal-section .sub {
+  text-align: center;
+  color: var(--soft);
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.terminal {
+  background: #150f1a;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2e2040;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+}
+
+.t-bar {
+  background: #1e1530;
+  padding: 0.75rem 1rem;
+  display: flex; align-items: center; gap: 6px;
+  border-bottom: 1px solid #2e2040;
+}
+
+.dot { width: 11px; height: 11px; border-radius: 50%; }
+.dr { background: #ff5f56; } .dy { background: #ffbd2e; } .dg { background: #27c93f; }
+
+.t-title { flex: 1; text-align: center; font-family: var(--mono); font-size: 0.7rem; color: #6b5a8a; letter-spacing: 0.05em; }
+
+.t-body { padding: 1.5rem 1.75rem; font-family: var(--mono); font-size: 0.83rem; line-height: 1.95; min-height: 260px; }
+
+.t-banner { color: #e8436a; font-size: 0.67rem; line-height: 1.45; white-space: pre; margin-bottom: 0.5rem; }
+.t-info { color: #6b5a7a; font-size: 0.75rem; }
+.t-prompt { color: #c47fda; }
+.t-cmd { color: #f0e8ff; }
+.t-ok { color: #7fe8c0; }
+.t-line { display: block; }
+
+.cursor {
+  display: inline-block; width: 7px; height: 0.9em;
+  background: var(--pink); vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* STEPS */
+.steps-section { padding: 5rem 2rem; max-width: 860px; margin: 0 auto; }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+
+.step {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+}
+
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  background: var(--pink);
+  color: #fff;
+  font-weight: 800; font-size: 0.9rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.step p { font-size: 0.85rem; color: var(--soft); line-height: 1.55; }
+.step code { font-family: var(--mono); font-size: 0.78rem; background: var(--surface); padding: 0.2rem 0.45rem; border-radius: 4px; color: var(--pink); }
+
+/* COMMANDS */
+.commands { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 2rem; }
+.commands-inner { max-width: 900px; margin: 0 auto; }
+
+.cmd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+
+.cmd-group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.cmd-group-title {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--pink);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cmd-item { margin-bottom: 0.9rem; }
+.cmd-item:last-child { margin-bottom: 0; }
+.cmd-say { display: block; font-family: var(--mono); font-size: 0.78rem; color: #0cbfaa; margin-bottom: 0.1rem; }
+.cmd-desc { font-size: 0.78rem; color: var(--soft); }
+
+/* CTA */
+.cta {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(160deg, #fef6f9 0%, #f0fffe 100%);
+  border-top: 1px solid var(--border);
+}
+
+.cta h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 0.75rem; }
+.cta p { color: var(--soft); margin-bottom: 2rem; font-size: 1rem; max-width: 460px; margin-left: auto; margin-right: auto; }
+
+.cta-boxes { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+
+.cta-box {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  min-width: 220px;
+}
+
+.cta-box-label { font-size: 0.72rem; font-weight: 700; color: var(--soft); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.cta-box-cmd { font-family: var(--mono); font-size: 0.82rem; color: var(--ink); }
+
+.btn {
+  display: inline-block;
+  background: var(--pink);
+  color: #fff; font-weight: 800; font-size: 0.95rem;
+  padding: 0.85rem 2.2rem;
+  border-radius: 100px;
+  border: none; cursor: pointer; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn:hover { background: #c8304f; transform: translateY(-2px); }
+
+footer {
+  padding: 2rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--border);
+  background: var(--card);
+}
+.footer-logo { font-weight: 800; color: var(--pink); font-size: 0.95rem; }
+footer p { font-size: 0.8rem; color: var(--soft); }
+
+@media (max-width: 640px) {
+  nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .compare { grid-template-columns: 1fr; }
+  .cmd-grid { grid-template-columns: 1fr; }
+  .t-banner { display: none; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  nav, .explain, .steps-section, .commands-inner, .cta { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">🌸 Hridaya OS</div>
+  <ul class="nav-links">
+    <li><a href="#what">What is it?</a></li>
+    <li><a href="#demo">See it work</a></li>
+    <li><a href="#howto">How to start</a></li>
+    <li><a href="#commands">Commands</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🌸 Free & Open Source — v2.0</div>
+  <h1>Stop memorizing<br/><span class="highlight">computer commands.</span></h1>
+  <p class="hero-tagline">Hridaya OS lets you talk to your computer in plain English — create files, folders, and full projects just by saying what you want.</p>
+  <p class="hero-simple">✨ No tech knowledge needed. Just type naturally.</p>
+
+  <div class="install-wrap" id="install">
+    <div class="install-box">
+      <code>npm install -g hridaya-os</code>
+      <button class="copy-btn" onclick="copyCmd(this)">Copy</button>
+    </div>
+    <div class="install-note">
+      <strong>Already have Node.js?</strong> Paste the command above in your terminal and hit Enter.
+      <br/>Don't have it? <a href="#howto" style="color:var(--cyan);font-weight:700;">See the 3-step guide below ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS IT -->
+<section class="explain" id="what">
+  <span class="section-tag">What is Hridaya OS?</span>
+  <h2>Your computer, but it understands you</h2>
+  <p class="explain-lead">Normally, to create a folder on your computer from a terminal, you have to type exact commands like <code style="font-family:var(--mono);background:var(--surface);padding:0.1rem 0.4rem;border-radius:4px;font-size:0.85rem">mkdir projects</code>. One mistake and it fails. Hridaya OS changes that — just say it like you'd say it to a person.</p>
+
+  <div class="compare">
+    <div class="compare-box old">
+      <div class="compare-label">😓 Old way (terminal)</div>
+      <div class="compare-item">mkdir projects<span class="desc">Create a folder</span></div>
+      <div class="compare-item">rm -rf old_folder<span class="desc">Delete a folder</span></div>
+      <div class="compare-item">mv file.txt archive/<span class="desc">Move a file</span></div>
+      <div class="compare-item">npx create-react-app myapp<span class="desc">Start a React project</span></div>
+    </div>
+    <div class="compare-box new">
+      <div class="compare-label">😊 Hridaya OS way</div>
+      <div class="compare-item">create a folder named projects<span class="desc">Same thing, plain English</span></div>
+      <div class="compare-item">delete the folder named old_folder<span class="desc">Easy to remember</span></div>
+      <div class="compare-item">move file.txt to archive/<span class="desc">Natural to say</span></div>
+      <div class="compare-item">create a react app named myapp<span class="desc">One sentence, full project!</span></div>
+    </div>
+  </div>
+
+  <span class="section-tag">Who is it for?</span>
+  <div class="who">
+    <div class="who-card">
+      <div class="who-icon">🎓</div>
+      <h3>Students learning to code</h3>
+      <p>Skip memorizing commands. Focus on building real things from day one.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">🎨</div>
+      <h3>Designers & creators</h3>
+      <p>Organize your project files and folders without touching confusing commands.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">💻</div>
+      <h3>Developers</h3>
+      <p>Scaffold full projects in seconds. React, Next.js, Django — one sentence each.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">🏠</div>
+      <h3>Everyone else</h3>
+      <p>If you've ever wanted to use a terminal but felt scared — this is for you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TERMINAL DEMO -->
+<section class="terminal-section" id="demo">
+  <div class="terminal-inner">
+    <h2>See it in action</h2>
+    <p class="sub">Watch Hridaya OS understand plain English commands in real time</p>
+
+    <div class="terminal">
+      <div class="t-bar">
+        <div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div>
+        <div class="t-title">hridaya-os — terminal</div>
+      </div>
+      <div class="t-body">
+        <span class="t-line t-banner">╔══════════════════════════════════════════════╗
+║         🌸  H R I D A Y A  O S  🌸          ║
+║     Human-Friendly File System CLI v2.0      ║
+╚══════════════════════════════════════════════╝</span>
+        <span class="t-line t-info">📂 Working in: /home/user/projects</span>
+        <span class="t-line t-info">💡 Just type naturally — no commands to memorize!</span>
+        <span class="t-line"> </span>
+        <div id="demo-output"></div>
+        <span class="t-line"><span class="t-prompt">hridaya&gt; </span><span id="typer"></span><span class="cursor"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO START -->
+<section class="steps-section" id="howto">
+  <span class="section-tag">How to get started</span>
+  <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;line-height:1.25;">3 simple steps — even if you've never used a terminal</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Install Node.js</h3>
+      <p>Go to <strong>nodejs.org</strong>, download and install it. It's free. This is the engine that runs Hridaya OS. Only needed once!</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Open your terminal</h3>
+      <p>On Windows: press <code>Win + R</code>, type <code>cmd</code>, hit Enter.<br/>On Mac: press <code>Cmd + Space</code>, type <code>Terminal</code>.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Run one command</h3>
+      <p>Type <code>npm install -g hridaya-os</code> and press Enter. Then type <code>hridaya</code> to start. That's it! 🌸</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMMANDS -->
+<section class="commands" id="commands">
+  <div class="commands-inner">
+    <span class="section-tag">All commands</span>
+    <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;line-height:1.25;">Everything you can say</h2>
+    <p style="color:var(--soft);margin-top:0.5rem;font-size:0.95rem;">All of these are just normal sentences — say them however feels natural to you.</p>
+
+    <div class="cmd-grid">
+      <div class="cmd-group">
+        <div class="cmd-group-title">📁 Files & Folders</div>
+        <div class="cmd-item"><span class="cmd-say">create a folder named projects</span><span class="cmd-desc">Makes a new folder</span></div>
+        <div class="cmd-item"><span class="cmd-say">create a file called notes.txt</span><span class="cmd-desc">Makes a new empty file</span></div>
+        <div class="cmd-item"><span class="cmd-say">delete the folder named old</span><span class="cmd-desc">Removes folder and everything in it</span></div>
+        <div class="cmd-item"><span class="cmd-say">delete the file notes.txt</span><span class="cmd-desc">Removes that file</span></div>
+        <div class="cmd-item"><span class="cmd-say">rename folder old to new</span><span class="cmd-desc">Gives it a new name</span></div>
+        <div class="cmd-item"><span class="cmd-say">copy file notes.txt to backup/notes.txt</span><span class="cmd-desc">Makes a copy</span></div>
+        <div class="cmd-item"><span class="cmd-say">move folder work to archive/work</span><span class="cmd-desc">Moves it to a new place</span></div>
+        <div class="cmd-item"><span class="cmd-say">list all files</span><span class="cmd-desc">Shows everything in current folder</span></div>
+        <div class="cmd-item"><span class="cmd-say">read the file notes.txt</span><span class="cmd-desc">Shows what's inside the file</span></div>
+        <div class="cmd-item"><span class="cmd-say">write Hello World to notes.txt</span><span class="cmd-desc">Saves text into a file</span></div>
+        <div class="cmd-item"><span class="cmd-say">create 3 folders named a, b, c</span><span class="cmd-desc">Creates many at once</span></div>
+      </div>
+
+      <div class="cmd-group">
+        <div class="cmd-group-title">🚀 Start a Project</div>
+        <div class="cmd-item"><span class="cmd-say">create a react app named myapp</span><span class="cmd-desc">Full React website, ready to go</span></div>
+        <div class="cmd-item"><span class="cmd-say">create a next.js project named blog</span><span class="cmd-desc">Next.js project setup</span></div>
+        <div class="cmd-item"><span class="cmd-say">create an express app named api</span><span class="cmd-desc">Express backend server</span></div>
+        <div class="cmd-item"><span class="cmd-say">create a django project named site</span><span class="cmd-desc">Python Django project</span></div>
+        <div class="cmd-item"><span class="cmd-say">create a node project named tool</span><span class="cmd-desc">Simple Node.js project</span></div>
+        <div class="cmd-item"><span class="cmd-say">create a spring boot app named svc</span><span class="cmd-desc">Java Spring Boot project</span></div>
+        <br/>
+        <div class="cmd-group-title">⚙️ Other</div>
+        <div class="cmd-item"><span class="cmd-say">help</span><span class="cmd-desc">Shows all commands inside the app</span></div>
+        <div class="cmd-item"><span class="cmd-say">exit</span><span class="cmd-desc">Closes Hridaya OS (also: bye, quit)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to try it?</h2>
+  <p>Free forever. Works on Windows, Mac, and Linux. No account needed.</p>
+
+  <div class="cta-boxes">
+    <div class="cta-box">
+      <div class="cta-box-label">Step 1 — Install once</div>
+      <div class="cta-box-cmd">npm install -g hridaya-cli</div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-label">Step 2 — Open anytime</div>
+      <div class="cta-box-cmd">hridaya</div>
+    </div>
+  </div>
+
+  <button class="btn" onclick="copyCta(this)">📋 Copy install command</button>
+  <p id="cta-note" style="margin-top:0.75rem;font-size:0.8rem;color:var(--cyan);font-weight:700;min-height:1.2em;"></p>
+</section>
+
+<footer>
+  <div class="footer-logo">🌸 Hridaya OS</div>
+  <p>Made with ❤️ — a terminal that speaks human</p>
+</footer>
+
+<script>
+function copyCmd(btn) {
+  navigator.clipboard.writeText('npm install -g hridaya-os').then(() => {
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+
+function copyCta(btn) {
+  navigator.clipboard.writeText('npm install -g hridaya-os').then(() => {
+    document.getElementById('cta-note').textContent = '✓ Copied! Now paste it in your terminal and hit Enter.';
+    setTimeout(() => document.getElementById('cta-note').textContent = '', 3000);
+  });
+}
+
+const demos = [
+  { cmd: 'create a folder named projects',           out: '✅ 📁 Folder \'projects\' created successfully!' },
+  { cmd: 'create a file called notes.txt',           out: '✅ 📄 File \'notes.txt\' created successfully!' },
+  { cmd: 'create a react app named myapp',           out: '🚀 Setting up React project \'myapp\'... done!' },
+  { cmd: 'create 3 folders named work, study, music',out: '✅ 📁 work   ✅ 📁 study   ✅ 📁 music' },
+  { cmd: 'copy file notes.txt to backup/notes.txt',  out: '✅ 📋 File \'notes.txt\' copied to \'backup/\'!' },
+  { cmd: 'list all files',                           out: '📁 projects/   📁 work/   📄 notes.txt' },
+  { cmd: 'move folder old to archive/old',           out: '✅ 🚚 Folder \'old\' moved to \'archive/old\'!' },
+];
+
+let idx = 0;
+const typer = document.getElementById('typer');
+const output = document.getElementById('demo-output');
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+async function runDemo() {
+  while (true) {
+    const d = demos[idx++ % demos.length];
+    for (let i = 0; i <= d.cmd.length; i++) {
+      typer.textContent = d.cmd.slice(0, i);
+      await sleep(32 + Math.random() * 22);
+    }
+    await sleep(420);
+
+    const exec = document.createElement('span');
+    exec.className = 't-line';
+    exec.innerHTML = `<span class="t-prompt">hridaya&gt; </span><span class="t-cmd">${d.cmd}</span>`;
+    output.appendChild(exec);
+
+    const res = document.createElement('span');
+    res.className = 't-line t-ok';
+    res.textContent = d.out;
+    output.appendChild(res);
+
+    const gap = document.createElement('span');
+    gap.className = 't-line'; gap.textContent = ' ';
+    output.appendChild(gap);
+
+    while (output.children.length > 9) output.removeChild(output.firstChild);
+    typer.textContent = '';
+    await sleep(1800);
+  }
+}
+
+setTimeout(runDemo, 900);
+</script>
+</body>
+</html>
