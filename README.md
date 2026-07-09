@@ -33,6 +33,7 @@ fix all games               → fixes 90% of errors in one go
 check directx               → DirectX version + legacy runtime
 check visual c++            → all VC++ versions
 list games                  → 36 supported games
+what games can i play       → check which supported games will run
 ```
 
 **36 Supported Games** — GTA series, NFS, Max Payne, CS, Minecraft, Valorant,
@@ -84,6 +85,14 @@ create 3 folders named a, b, c
 read the file notes.txt
 write Hello World to notes.txt
 list all files
+open notes.txt
+hide notes.txt
+unhide notes.txt
+show hidden files
+search for notes.txt
+how big is notes.txt
+count files
+clear folder projects
 ```
 
 ---
@@ -123,6 +132,16 @@ hridaya-os/
 **Application Management** — Fix Photoshop, AutoCAD and other software errors.
 Same idea as Game Management but for professional software.
 Official links only. No cracks. Ever.
+
+---
+
+## ⭐ Support
+
+If Hridaya OS helps you, consider giving it a ⭐ on GitHub.
+
+GitHub: https://github.com/Mohith933/HridayaOS
+
+Bug reports and feature requests are always welcome.
 
 ---
 
