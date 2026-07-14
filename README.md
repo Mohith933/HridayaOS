@@ -16,6 +16,24 @@ npm install -g hridaya-os
 ```bash
 hridaya
 ```
+---
+
+## 🖥️ Application Management
+
+> Fix common application errors in seconds — no searching through forums.
+> ⚠️ Windows only | 🔒 Official links only — no cracks, no piracy.
+
+```text
+scan app photoshop.exe      → check application requirements
+fix app photoshop.exe       → show what's missing + fix links
+fix error msvcp140.dll      → common DLL fix
+list apps                   → 18 supported applications
+```
+
+**18 Supported Applications** — Adobe Photoshop, Premiere Pro, Illustrator,
+After Effects, AutoCAD, Autodesk 3ds Max, Microsoft Word, Microsoft Excel,
+VLC Media Player, OBS Studio, Visual Studio Code, 7-Zip, WinRAR,
+HandBrake, Blender, Discord, Spotify and Zoom.
 
 ---
 
@@ -114,24 +132,35 @@ create a spring boot app named svc
 
 ```
 hridaya-os/
-├── index.js       ← CLI entry point
-├── parser.js      ← Natural language parser
-├── fileSystem.js  ← File & folder operations
-├── memory.js      ← Memory management
-├── disk.js        ← Disk management
-├── game.js        ← Game management engine
-├── gameDB.js      ← 36 games + 86 DLL error database
-├── scaffolder.js  ← Project scaffolding
-└── package.json
+├── index.js         ← CLI entry point
+├── parser.js        ← Understands natural language
+├── fileSystem.js    ← File & folder management
+├── memory.js        ← Memory management
+├── disk.js          ← Disk management
+├── game.js          ← Game management
+├── gameDB.js        ← Game requirements database 
+├── app.js           ← Application management ← NEW!
+├── appDB.js         ← Application requirements database ← NEW!
+├── scaffolder.js    ← Project scaffolding
+└── package.json     ← Project configuration
 ```
 
 ---
 
-## 🔮 Coming Soon — v4.0.0
+## 🔮 Coming in v5.0.0
 
-**Application Management** — Fix Photoshop, AutoCAD and other software errors.
-Same idea as Game Management but for professional software.
-Official links only. No cracks. Ever.
+### 🔍 Real-Time Detection Engine
+
+Bringing real-time detection to Game Management and Application Management.
+
+- Detect installed games automatically
+- Detect installed applications
+- Locate installation folders
+- Verify executable health
+- Deep DLL verification
+- Launcher detection (Steam, Epic Games, Rockstar Games Launcher, EA App, Ubisoft Connect)
+
+> This upgrade enhances Game Management and Application Management with real-time system detection instead of relying only on compatibility databases.
 
 ---
 
