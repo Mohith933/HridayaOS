@@ -4,7 +4,7 @@
 [![Downloads](https://img.shields.io/npm/dw/hridaya-os.svg)](https://www.npmjs.com/package/hridaya-os)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> A human-friendly CLI — talk naturally, no strict commands needed.
+> A human-friendly CLI — type naturally, no strict commands needed.
 > Works on Windows, Mac, Linux and Android (Termux).
 
 ## 🚀 Install
