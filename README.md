@@ -131,7 +131,7 @@ create a django project named site
 create a node project named tool
 create a spring boot app named svc
 create a vite app named myapp
-`create a fastapi project named api    
+create a fastapi project named api    
 create a nestjs project named backend   
 create a flutter app named myapp
 create a react native app named myapp
