@@ -87,6 +87,8 @@ compare chrome and discord memory    → side by side
 warn me when RAM goes above 80%      → background watcher
 start memory history                 → tracks every 60 seconds
 system info                          → OS, CPU, cores, uptime
+kill chrome                          → kill a specific application
+list running processes               → list all active processes
 ```
 
 ---
@@ -111,6 +113,10 @@ search for notes.txt
 how big is notes.txt
 count files
 clear folder projects
+go to downloads
+zip projects
+unzip projects.zip
+
 ```
 
 ---
@@ -124,6 +130,12 @@ create an express app named api
 create a django project named site
 create a node project named tool
 create a spring boot app named svc
+create a vite app named myapp
+`create a fastapi project named api    
+create a nestjs project named backend   
+create a flutter app named myapp
+create a react native app named myapp
+
 ```
 
 ---
@@ -139,8 +151,8 @@ hridaya-os/
 ├── disk.js          ← Disk management
 ├── game.js          ← Game management
 ├── gameDB.js        ← Game requirements database 
-├── app.js           ← Application management ← NEW!
-├── appDB.js         ← Application requirements database ← NEW!
+├── app.js           ← Application management 
+├── appDB.js         ← Application requirements database 
 ├── scaffolder.js    ← Project scaffolding
 └── package.json     ← Project configuration
 ```
