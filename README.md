@@ -182,6 +182,8 @@ If Hridaya OS helps you, consider giving it a ⭐ on GitHub.
 
 GitHub: https://github.com/Mohith933/HridayaOS
 
+▶️ Subscribe on YouTube for new features, tutorials and release updates. https://www.youtube.com/@mohithsaib
+
 Bug reports and feature requests are always welcome.
 
 ---
