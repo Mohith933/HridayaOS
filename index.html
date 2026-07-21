@@ -768,7 +768,7 @@
   </nav>
 
   <section class="hero">
-    <div class="hero-badge">🌸 v4.1.0 — 5 Core Modules Complete!</div>
+    <div class="hero-badge">🌸 v4.2.0 — 5 Core Modules Complete!</div>
     <h1>Stop memorizing<br /><span class="highlight">computer commands.</span></h1>
     <p class="hero-tagline">Hridaya OS lets you talk to your computer in plain English — manage files, memory, disks,
       games, applications and create projects just by saying what you want.</p>
@@ -795,7 +795,7 @@
 
   <div class="stats">
     <div class="stat-item">
-      <div class="stat-num">1.5k+</div>
+      <div class="stat-num">1.7k+</div>
       <div class="stat-label">npm Downloads</div>
     </div>
     <div class="stat-item">
@@ -891,9 +891,9 @@
         <div class="t-body">
           <span class="t-line t-banner">
             ╔══════════════════════════════════════════════╗
-            ║         🌸  H R I D A Y A  O S  🌸          ║
-            ║     Human-Friendly File System CLI v4.1      ║
-            ║   Just talk naturally — no strict commands   ║
+            ║ 🌸 H R I D A Y A O S 🌸 ║
+            ║ Human-Friendly File System CLI v4.2 ║
+            ║ Just talk naturally — no strict commands ║
             ╚══════════════════════════════════════════════╝
           </span>
           <span class="t-line t-info">💡 Just type naturally — no commands to memorize!</span>
@@ -1037,7 +1037,10 @@
               .txt</span></div>
           <div class="cmd-item"><span class="cmd-say">warn me when disk goes below 5GB</span><span
               class="cmd-desc">Background watcher!</span></div>
+              <div class="cmd-itme"><span class="cmd-say">Show Large Files</span><span class="cmd-desc">find files over
+            1GB</span></div>
         </div>
+        
 
         <div class="cmd-group">
           <div class="cmd-group-title">💾 Memory Management</div>
@@ -1055,85 +1058,165 @@
               class="cmd-desc">Background watcher!</span></div>
           <div class="cmd-item"><span class="cmd-say">start memory history</span><span class="cmd-desc">Tracks every 60
               seconds</span></div>
+               <div class="cmd-item"><span class="cmd-say">Specfic Kill App</span><span class="cmd-desc">kill chrome</span></div>
         </div>
 
-        <div class="cmd-group">
-          <div class="cmd-group-title">📁 File Management</div>
 
-          <div class="cmd-item">
-            <span class="cmd-say">create a folder named projects</span>
-            <span class="cmd-desc">Create a new folder</span>
-          </div>
+    <div class="cmd-group">
+      <div class="cmd-group-title">📁 File Management</div>
 
-          <div class="cmd-item">
-            <span class="cmd-say">delete the folder named old</span>
-            <span class="cmd-desc">Remove a folder</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">copy file notes.txt to backup/</span>
-            <span class="cmd-desc">Copy a file</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">move folder work to archive/</span>
-            <span class="cmd-desc">Move a folder</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">arrange my files</span>
-            <span class="cmd-desc">Auto organize files</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">create 3 folders named work, study, games</span>
-            <span class="cmd-desc">Bulk folder creation</span>
-          </div>
-        </div>
-
-        <div class="cmd-group">
-          <div class="cmd-group-title">🚀 Project Scaffolding</div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">create a react app named myapp</span>
-            <span class="cmd-desc">React project</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">create a next.js project named blog</span>
-            <span class="cmd-desc">Next.js project</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">create an express app named api</span>
-            <span class="cmd-desc">Express server</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">create a node project named tool</span>
-            <span class="cmd-desc">Node.js project</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">create a django project named site</span>
-            <span class="cmd-desc">Python Django</span>
-          </div>
-
-          <div class="cmd-item">
-            <span class="cmd-say">create a spring boot app named service</span>
-            <span class="cmd-desc">Spring Boot project</span>
-          </div>
-        </div>
-
-        
-
-
+      <div class="cmd-item">
+        <span class="cmd-say">create a folder named projects</span>
+        <span class="cmd-desc">Create a new folder</span>
       </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">delete the folder named old</span>
+        <span class="cmd-desc">Remove a folder</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">copy file notes.txt to backup/</span>
+        <span class="cmd-desc">Copy a file</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">move folder work to archive/</span>
+        <span class="cmd-desc">Move a folder</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">arrange my files</span>
+        <span class="cmd-desc">Auto organize files</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">create 3 folders named work, study, games</span>
+        <span class="cmd-desc">Bulk folder creation</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">open notes.txt</span>
+        <span class="cmd-desc">Open a file</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">hide notes.txt</span>
+        <span class="cmd-desc">Hide a file</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">unhide notes.txt</span>
+        <span class="cmd-desc">Unhide a file</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">show hidden files</span>
+        <span class="cmd-desc">Display hidden files</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">search for notes.txt</span>
+        <span class="cmd-desc">Search for a file</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">how big is notes.txt</span>
+        <span class="cmd-desc">Check file size</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">count files</span>
+        <span class="cmd-desc">Count files in current folder</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">clear folder projects</span>
+        <span class="cmd-desc">Delete all files inside a folder</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">go to downloads</span>
+        <span class="cmd-desc">Change current directory</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">zip projects</span>
+        <span class="cmd-desc">Compress a folder into a ZIP</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">unzip projects.zip</span>
+        <span class="cmd-desc">Extract a ZIP archive</span>
+      </div>
+
     </div>
+
+    <div class="cmd-group">
+      <div class="cmd-group-title">🚀 Project Scaffolding</div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">create a react app named myapp</span>
+        <span class="cmd-desc">React project</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">create a next.js project named blog</span>
+        <span class="cmd-desc">Next.js project</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">create an express app named api</span>
+        <span class="cmd-desc">Express server</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">create a node project named tool</span>
+        <span class="cmd-desc">Node.js project</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">create a django project named site</span>
+        <span class="cmd-desc">Python Django</span>
+      </div>
+
+      <div class="cmd-item">
+        <span class="cmd-say">create a spring boot app named service</span>
+        <span class="cmd-desc">Spring Boot project</span>
+      </div>
+      <div class="cmd-item">
+      <span class="cmd-say">create a vite app named myapp</span>
+      <span class="cmd-desc">Vite + React project</span>
+    </div>
+
+    <div class="cmd-item">
+      <span class="cmd-say">create a fastapi project named api</span>
+      <span class="cmd-desc">FastAPI backend</span>
+    </div>
+
+    <div class="cmd-item">
+      <span class="cmd-say">create a nestjs project named backend</span>
+      <span class="cmd-desc">NestJS backend</span>
+    </div>
+
+    <div class="cmd-item">
+      <span class="cmd-say">create a flutter app named myapp</span>
+      <span class="cmd-desc">Flutter application</span>
+    </div>
+
+    <div class="cmd-item">
+      <span class="cmd-say">create a react native app named myapp</span>
+      <span class="cmd-desc">React Native application</span>
+    </div>
+    </div>
+
+
+
+  </div>
   </section>
 
   <section class="cta">
-    <h2>Ready to try Hridaya OS v4.1.0?</h2>
+    <h2>Ready to try Hridaya OS v4.2.0?</h2>
     <p>Free forever. Works on Windows, Mac, Linux and Android. No account needed.</p>
     <div class="cta-boxes">
       <div class="cta-box">
