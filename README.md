@@ -72,6 +72,7 @@ empty recycle bin                    → instant cleanup
 save disk report                     → saves .txt report
 warn me when disk goes below 5GB     → background watcher
 start disk history                   → tracks over time
+show larger files                    → find files over 1GB
 ```
 
 ---
