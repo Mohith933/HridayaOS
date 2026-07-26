@@ -160,30 +160,51 @@ hridaya-os/
 
 ---
 
-## 🔮 Coming in v5.0.0
+## 🗺️ Roadmap — v5.x.0 Continuous Improvement
 
-### 🔍 Real-Time Detection Engine
+### v5.0.0 — Real-Time Detection Engine
+> Upgrading Game + App Management from database matching to actual system detection.
 
-Bringing real-time detection to Game Management and Application Management.
+| What | How |
+|------|-----|
+| `scan installed games` | Scans Steam, Epic, Rockstar, EA, Ubisoft + common paths |
+| `scan installed apps` | Reads Windows registry + Program Files |
+| `real scan gta_sa.exe` | Finds actual install path → checks real DLLs |
+| `detect launchers` | Shows all game launchers installed on your PC |
+| `real scan photoshop.exe` | Finds actual install → checks real DLLs |
 
-- Detect installed games automatically
-- Detect installed applications
-- Locate installation folders
-- Verify executable health
-- Deep DLL verification
-- Launcher detection (Steam, Epic Games, Rockstar Games Launcher, EA App, Ubisoft Connect)
+### v5.1.0 — Game Management Expansion
+- More games added to database (50+ target)
+- More DLL error codes covered (100+ target)
+- Better error messages with step-by-step fix guides
 
-> This upgrade enhances Game Management and Application Management with real-time system detection instead of relying only on compatibility databases.
+### v5.2.0 — Application Management Expansion
+- More software supported (Adobe CC full suite, Autodesk full suite)
+- Microsoft Office deep fix support
+- Visual Studio / JetBrains IDE support
+
+### v5.3.0 — Project Scaffolding Expansion
+- More frameworks: SvelteKit, Astro, Remix, Bun
+- Mobile: Expo, Capacitor
+- Backend: Hono, Elysia, tRPC
+- Full-stack templates: T3 Stack, MERN, MEAN
+
+### v5.4.0 — Cross-Platform Polish
+- Better Mac/Linux support for all phases
+- Termux (Android) improvements
+- Unified experience across all platforms
 
 ---
 
-## ⭐ Support
+## ⭐ Support Hridaya OS
 
-If Hridaya OS helps you, consider giving it a ⭐ on GitHub.
+If Hridaya OS helps you, you can support the project in two ways:
 
-GitHub: https://github.com/Mohith933/HridayaOS
+⭐ Star the project on GitHub
+https://github.com/Mohith933/HridayaOS
 
-▶️ Subscribe on YouTube for new features, tutorials and release updates. https://www.youtube.com/@mohithsaib
+▶️ Subscribe on YouTube for new features, tutorials and release updates.
+https://www.youtube.com/@mohithsaib
 
 Bug reports and feature requests are always welcome.
 
