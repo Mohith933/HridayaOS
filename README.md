@@ -210,4 +210,4 @@ Bug reports and feature requests are always welcome.
 
 ---
 
-Made with ❤️ — Hridaya OS — a terminal that speaks human!
+Made with Mohith Sai ❤️ — Hridaya OS — a terminal that speaks human!
