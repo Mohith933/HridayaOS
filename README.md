@@ -162,21 +162,23 @@ hridaya-os/
 
 ## 🗺️ Roadmap — v5.x.0 Continuous Improvement
 
-### v5.0.0 — Real-Time Detection Engine
+### ✅ v5.0.0 — Real-Time Detection Engine
 > Upgrading Game + App Management from database matching to actual system detection.
 
 | What | How |
 |------|-----|
-| `scan installed games` | Scans Steam, Epic, Rockstar, EA, Ubisoft + common paths |
-| `scan installed apps` | Reads Windows registry + Program Files |
-| `real scan gta_sa.exe` | Finds actual install path → checks real DLLs |
+| `scan installed games` | Scans Steam, Epic, Rockstar, EA, Ubisoft + common game paths |
+| `scan installed apps` | Finds installed desktop apps and software across your PC |
+| `real scan gta_sa.exe` | Finds exact install path → tests real system & game DLLs |
 | `detect launchers` | Shows all game launchers installed on your PC |
-| `real scan photoshop.exe` | Finds actual install → checks real DLLs |
+| `real scan photoshop.exe` | Finds actual install path → tests real system & apps DLLs |
 
-### v5.1.0 — Game Management Expansion
-- More games added to database (50+ target)
-- More DLL error codes covered (100+ target)
-- Better error messages with step-by-step fix guides
+### ✅ v5.1.0 — Smart Game & Multi-Drive Engine (Current Release)
+- **Multi-Drive Scanning:** Automatically finds games on secondary drives (`D:\`, `E:\`, `F:\`) — no manual path setting needed.
+- **Standalone & Cracked Game Support:** Now detects classic and direct-installed games (GTA series, old PC games, non-launcher titles).
+- **Smarter Launcher Detection:** Instantly finds Steam, Epic Games, Rockstar, EA, and Ubisoft even if installed in custom folders.
+- **Multi-Library Steam Support:** Auto-scans all your Steam library folders across every connected SSD/HDD.
+- **Expanded Coverage:** Game database expanded to 51+ titles and 100+ common missing DLL error fixes.
 
 ### v5.2.0 — Application Management Expansion
 - More software supported (Adobe CC full suite, Autodesk full suite)
