@@ -153,6 +153,7 @@ hridaya-os/
 ├── game.js          ← Game management
 ├── gameDB.js        ← Game requirements database 
 ├── app.js           ← Application management 
+├── detector.js      ← Real-Time Detection Engine
 ├── appDB.js         ← Application requirements database 
 ├── scaffolder.js    ← Project scaffolding
 └── package.json     ← Project configuration
