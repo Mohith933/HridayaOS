@@ -180,6 +180,9 @@ hridaya-os/
 - **Multi-Library Steam Support:** Auto-scans all your Steam library folders across every connected SSD/HDD.
 - **Expanded Coverage:** Game database expanded to 51+ titles and 100+ common missing DLL error fixes.
 
+### ✅ v5.1.1 — System App Engine Patch
+- **Engine Hotfix:** Fixed app detection scanner for deep subfolder structures and multi-drive installations.
+  
 ### v5.2.0 — Application Management Expansion
 - More software supported (Adobe CC full suite, Autodesk full suite)
 - Microsoft Office deep fix support
