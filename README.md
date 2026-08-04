@@ -138,7 +138,7 @@ create a flutter app named myapp
 create a react native app named myapp
 
 ```
-
+> 💡 **Pro Tip:** We keep the default menu concise so you aren't buried in choices. However, Hridaya OS also supports **SvelteKit, Astro, Bun, Remix, Hono, Elysia, and T3**. Just type `create a <framework> app named <name>` and it will scaffold automatically!
 ---
 
 ## 🗂️ Project Structure
@@ -174,7 +174,7 @@ hridaya-os/
 | `detect launchers` | Shows all game launchers installed on your PC |
 | `real scan photoshop.exe` | Finds actual install path → tests real system & apps DLLs |
 
-### ✅ v5.1.0 — Smart Game & Multi-Drive Engine (Current Release)
+### ✅ v5.1.0 — Smart Game & Multi-Drive Engine 
 - **Multi-Drive Scanning:** Automatically finds games on secondary drives (`D:\`, `E:\`, `F:\`) — no manual path setting needed.
 - **Standalone & Cracked Game Support:** Now detects classic and direct-installed games (GTA series, old PC games, non-launcher titles).
 - **Smarter Launcher Detection:** Instantly finds Steam, Epic Games, Rockstar, EA, and Ubisoft even if installed in custom folders.
@@ -183,22 +183,22 @@ hridaya-os/
 
 ### ✅ v5.1.1 — System App Engine Patch
 - **Engine Hotfix:** Fixed app detection scanner for deep subfolder structures and multi-drive installations.
-  
-### v5.2.0 — Application Management Expansion
-- More software supported (Adobe CC full suite, Autodesk full suite)
-- Microsoft Office deep fix support
-- Visual Studio / JetBrains IDE support
 
-### v5.3.0 — Project Scaffolding Expansion
-- More frameworks: SvelteKit, Astro, Remix, Bun
-- Mobile: Expo, Capacitor
-- Backend: Hono, Elysia, tRPC
-- Full-stack templates: T3 Stack, MERN, MEAN
+### ✅ v5.2.0 — Application Management Expansion 
+- **Expanded Application Suite:** Database expanded to 28 major software suites, adding Adobe CC (Audition), Autodesk (Maya, Revit), MS Office (PowerPoint), Visual Studio, and JetBrains IDEs (IntelliJ, PyCharm, WebStorm, CLion, Rider).
+- **Deep Application Diagnostics:** Advanced DLL detection, version-specific crash resolutions, and runtime fixes for development & creative environments.
+- **Enhanced Scanning Engine:** 2-level directory traversal across all connected drives (`C:`, `D:`, `E:`) and per-user AppData directories.
 
-### v5.4.0 — Cross-Platform Polish
-- Better Mac/Linux support for all phases
-- Termux (Android) improvements
-- Unified experience across all platforms
+### ✅ v5.3.0 — Project Scaffolding Expansion (Current Release)
+- Modern Web: SvelteKit, Astro, Remix, Bun (create a bun app named myapp)
+- Mobile & Hybrid: Expo, Capacitor (create an expo app named myapp)
+- Backend & APIs: Hono, Elysia, tRPC, NestJS, Spring Boot
+- Full-Stack Templates: T3 Stack, MERN, MEAN (create a mern project named myapp)
+
+### 📅 v5.4.0 — Cross-Platform Support (Next Release)
+- Runs Smoothly on Mac, Linux & Mobile: Full support for Mac, Linux, and Android (Termux) alongside Windows.
+- Smart Feature Protection: If you run Windows-only commands (like DirectX or DLL fixes) on a Mac or Linux, Hridaya OS will safely warn you instead of crashing.
+- Better File & System Tracking: Disk and memory stats now work accurately across every operating system.
 
 ---
 
