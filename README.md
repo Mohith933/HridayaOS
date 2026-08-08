@@ -1,4 +1,4 @@
-# 🌸 Hridaya OS
+# 🌸 Hridaya OS CLI
 
 [![npm version](https://img.shields.io/npm/v/hridaya-os.svg)](https://www.npmjs.com/package/hridaya-os)
 [![Downloads](https://img.shields.io/npm/dw/hridaya-os.svg)](https://www.npmjs.com/package/hridaya-os)
